@@ -43,29 +43,34 @@
   grid-template-columns: repeat(10, 1fr);
   height: 300px;
   width: 300px;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .square {
   transition: 0.5s;
 }
 
+.app, .headings, .paint, .brush-selection{
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 .color-1 {
-
+background-color: aqua;
 }
 
 .color-2 {
-
+background-color: turquoise;
 }
 
 .color-3 {
-
+background-color: rgb(0, 98, 128);
 }
 
 .color-4 {
-
+background-color: teal
 }
 
 .color-5 {
-
+background-color: rgb(64, 165, 224)
 }

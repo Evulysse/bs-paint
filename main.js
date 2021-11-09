@@ -15,15 +15,15 @@
  * To make the second one happen, the number to change
  * is the first argument to `repeat`, currently set at 10.
  */
-const gridWidth = 10;
-let count = 0;
-while (count <= gridWidth * gridWidth) {
-  const canvas = document.querySelector('.canvas');
-  const div = document.createElement('div');
-  div.className = 'square color-5';
-  canvas.appendChild(div);
-  count++;
-}
+// const gridWidth = 10;
+// let count = 0;
+// while (count <= gridWidth * gridWidth) {
+//   const canvas = document.querySelector('.canvas');
+//   const div = document.createElement('div');
+//   div.className = 'square color-5';
+//   canvas.appendChild(div);
+//   count++;
+// }
 
 // You probably should NOT do these in the order below.
 // That is, you probably should NOT do all the queries,
@@ -71,3 +71,34 @@ while (count <= gridWidth * gridWidth) {
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+const gridWidth = 10;
+let count = 0;
+while (count <= gridWidth * gridWidth) {
+  const canvas = document.querySelector('.canvas');
+  const div = document.createElement('div');
+  div.className = 'square color-5';
+  canvas.appendChild(div);
+  count++;
+}
+
+const paletteColors = document.querySelectorAll(".palette div");
+const currentBrush = document.querySelector(".current-brush");
+
+function changeBrushColor(event) {
+    let classes = event.target.classList;
+
+    let targetElementColor;
+
+    for(const c of classes) {
+        if(c.match("color-[1-5]")) {
+            targetElementColor = c;
+            break;
+        }
+    }
+
+    currentBrush.setAttribute("class", targetElementColor);
+}
+
+for(const paletteColor of paletteColors) {
+    paletteColor.addEventListener("click", changeBrushColor);
+}
