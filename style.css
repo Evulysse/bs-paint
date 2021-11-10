@@ -1,3 +1,9 @@
+.app, .headings, .paint, .brush-selection{
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .app {
   display: flex;
   height: 500px;
@@ -10,6 +16,7 @@
 .brush-selection {
   height: 70px;
   display: flex;
+ 
 }
 
 .paint {
@@ -50,11 +57,6 @@
   transition: 0.5s;
 }
 
-.app, .headings, .paint, .brush-selection{
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
 .color-1 {
 background-color: aqua;
 }
