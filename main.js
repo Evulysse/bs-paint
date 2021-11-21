@@ -102,3 +102,25 @@ function changeBrushColor(event) {
 for(const paletteColor of paletteColors) {
     paletteColor.addEventListener("click", changeBrushColor);
 }
+
+const palettColors = document.querySelectorAll(".palette div");
+const currentCanvas = document.querySelector(".current-canvas");
+
+function changeCanvasColor(event) {
+    let classess = event.target.classList;
+
+    let targetElementColor;
+
+    for(const c of classess) {
+        if(c.match("color-[1-5]")) {
+            targetElementColor = c;
+            break;
+        }
+    }
+
+    currentCanvas.setAttribute("class", targetElementColor);
+}
+
+for(const palettColor of palettColors) {
+    palettColor.addEventListener("click", changeCanvasColor);
+}
